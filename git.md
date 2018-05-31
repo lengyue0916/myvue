@@ -4,8 +4,10 @@ cd 打开本地文件目录
 git init
 git add README.md　 
 git add . 提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件git add -A  提交所有变化
-git commit -m "first commit"
 git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
+
+git commit -m "first commit"
+
 git remote add origin https://github.com/lengyue0916/vue.git
 git push -u origin master
 
@@ -32,7 +34,21 @@ git pull origin master 将远程仓库里面的项目拉下来
 
 dir  查看有哪些文件夹
 
-git rm -r --cached file  删除file文件或文件夹
-git commit -m '删除了target'  提交,添加操作说明
-git push -u origin master 将本次更改更新到github项目上去
+
 git remote -v　查看远程地址
+
+git rm -r --cached dirname //删除远程文件夹，但保留本地文件夹 
+git commit -m ‘say something’ //提交操作，并添加描述 
+git push origin master //推送
+
+
+git config  user.name "maxsu" //设置用户名
+git config user.email "yiibai.com@gmail.com"　//设置邮箱
+
+git config --list
+
+git clone　　//克隆一个仓库到一个新目录
+
+git branch -r //查看远程分支
+git branch -a　//查看所有分支
+
