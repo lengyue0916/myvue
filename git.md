@@ -76,3 +76,11 @@ git diff --cached 或 $ git diff --staged 查看尚未提交的更新
 
 git stash push 将文件给push到一个临时空间中
 git stash pop 将文件从临时空间pop下来
+
+git - 生成 SSH 公钥
+
+ls -al ~/.ssh  查看现有的密钥是否存在,默认情况下，公钥的文件名是id_rsa.pub
+ssh-keygen 生成新的SSH key
+ssh-keygen  -t   rsa   -C  "444627736@qq.com" 
+cat ~/.ssh/id_rsa.pub  查看公钥
+ssh -T git@github.com  测试是否配置成功
