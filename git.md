@@ -3,12 +3,13 @@ git 命令整理
 cd 打开本地文件目录
 git init
 git add README.md　 
-git add . 提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件git add -A  提交所有变化
+git add . 提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
+git add -A  提交所有变化
 git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
 
 git commit -m "first commit"
 
-git remote add origin https://github.com/lengyue0916/vue.git
+git remote add origin git@github.com:lengyue0916/web.git (https://github.com/lengyue0916/vue.git)
 git push -u origin master
 
 git　help 帮助命令
@@ -84,3 +85,53 @@ ssh-keygen 生成新的SSH key
 ssh-keygen  -t   rsa   -C  "444627736@qq.com" 
 cat ~/.ssh/id_rsa.pub  查看公钥
 ssh -T git@github.com  测试是否配置成功
+
+
+//删除远程文件夹,本地保留,一定要注意，删除文件夹要使用-r 参数
+git rm --cached -r useless
+git commit -m "remove directory from remote repository"
+git push
+
+//删除服务器文件,本地保留
+git rm --cached useless.log
+git commit -m "remove file from remote repository"
+git push
+
+记录每一次git的命令（该命令可用于回滚后忘记最新版的id是找回）
+git reflog
+
+移除远程库
+git remote rm origin
+    
+添加远程库
+git remote add origin "Git仓库的ssh格式地址"
+
+克隆一个已有的远程仓库。address是远程库地址   
+git clone <adderss>
+
+git checkout -b <newbranch>
+创建一个新的分支并切换到这个新的分支。-b参数表示创建新分支 newbranch 新的分支名【请忽略<>】
+
+git branch <newbranch>
+创建一个新的分支，newbranch 新的分支名【请忽略<>】
+
+git checkout <branch>
+切换到指定分支【请忽略<>】
+
+git branch
+查看当前仓库拥有的分支，以及当前在哪一个分支
+    
+git merge <branch>
+合并指定分支的更新到当前所在分支【请忽略<>】
+
+git branch -d <branch>
+删除指定分支【请忽略<>】
+
+git branch -D <branch>
+强制删除指定分支【请忽略<>】	
+
+git diff
+查看修改的内容。注意：已经使用git add之后，不能再查看修改的内容
+
+//取消文件git
+rm -rf .git
